@@ -50,7 +50,9 @@ View the `generate_bdd.py` file [here](./generate_bdd.py)
 
 ### Gen file test
 `python generate_step_definition.py`
+
 View the `generate_step_definition.py` file [here](./generate_step_definition.py)
+
 Contents of the [output file](./features/steps/user_story_1.py): 
 ```
 from behave import given, when, then
@@ -80,8 +82,11 @@ def step_impl(context):
 ```
 
 ### Gen complete file test
+
 `python generate_complete_step.py`
+
 Input: feature file, step file
+
 Content of the output file
 ```
 
