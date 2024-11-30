@@ -1,0 +1,2 @@
+As a user, I want to see a success message when I enter the correct username and password (username: admin, password: 1234) so that I know I have logged in successfully
+As a user, I want to see an error message if I enter incorrect login credentials (username: user, password: 123), so that I know to try again.
