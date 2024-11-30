@@ -17,10 +17,13 @@
     - python login.py
 
 View the `login.py` file [here](./login.py)
+
 Login screen:
 ![Login screen](./images/login_screen.png)
+
 Login successful:
 ![Login screen](./images/login_success.png)
+
 Login failed:
 ![Login screen](./images/login_failed.png)
 
