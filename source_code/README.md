@@ -1,4 +1,4 @@
-## Overall
+## Steps to follow
 - [Step 1: Code login program](#login-program)
 - [Step 2: Update user story](#update-user-story)
 - [Step 3: Gen .feature file from user story](#gen-bdd-from-user-story)
