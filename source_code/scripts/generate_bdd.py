@@ -31,19 +31,23 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
     # Add arguments
-    parser.add_argument("--us_path", type=str, help="The user story path to generate BDD scenarios")
-    parser.add_argument("--code_path", type=str, help="The code path to generate BDD scenarios")
-    parser.add_argument("--prefix_output", type=str, help="The prefix of the feature file")
+    # parser.add_argument("--us_path", type=str, help="The user story path to generate BDD scenarios")
+    # parser.add_argument("--code_path", type=str, help="The code path to generate BDD scenarios")
+    # parser.add_argument("--prefix_output", type=str, help="The prefix of the feature file")
+    parser.add_argument("--task", type=str, help="The task to perform")
+    
 
     # Parse the arguments
     args = parser.parse_args()
 
 
-    with open(f"{args.us_path}", 'r') as file:
+    us_path = f"user-stories/{args.task}.txt"
+    with open(us_path, 'r') as file:
         # user_stories = file.read().splitlines()
         user_stories = file.read()
         
-    with open(f"{args.code_path}", "r") as f:
+    code_path = f"{args.task}.py"
+    with open(code_path, "r") as f:
         code = f.read()
     
     bdd_scenarios = generate_bdd_from_user_story(user_stories, code)
@@ -55,13 +59,8 @@ if __name__ == "__main__":
     
     # Save the generated BDD scenarios to a file 
     # feature_filename = f"features/{args.prefix_output}_{user_stories.index(user_story) + 1}.feature"
-    feature_filename = f"features/{args.prefix_output}.feature"
+    feature_filename = f"features/{args.task}.feature"
     with open(feature_filename, 'w') as feature_file:
         feature_file.write(bdd_scenarios)
-            
-    # for user_story in user_stories:
-    #     print("------------------------------------------------")
-        
-        
-        # break
+
         

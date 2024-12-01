@@ -4,13 +4,11 @@ from PyQt5.QtWidgets import (
     QLabel, QLineEdit, QPushButton, QTableWidget, QTableWidgetItem
 )
 
-
 class EmployeeApp(QMainWindow):
     def __init__(self):
         super().__init__()
         self.initUI()
         
-    
     def initUI(self):
         self.setWindowTitle("Human Resource Management")
         self.setGeometry(100, 100, 600, 400)
@@ -67,9 +65,12 @@ class EmployeeApp(QMainWindow):
         self.table.setItem(row_position, 2, QTableWidgetItem(emp_birth_year))
 
         # Clear input fields
-        self.input_id.clear()
-        self.input_name.clear()
-        self.input_birth_year.clear()
+        # self.input_id.clear()
+        # self.input_name.clear()
+        # self.input_birth_year.clear()
+        self.input_id.setText("")
+        self.input_name.setText("")
+        self.input_birth_year.setText("")
 
 
 if __name__ == "__main__":

@@ -1,6 +1,5 @@
 import os
 import re
-import glob
 import argparse
 
 def generate_step_definitions(feature_file, step_file):
@@ -55,17 +54,12 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
     # Add arguments
-    parser.add_argument("--prefix_feature", type=str, help="The prefix of the feature file")
-    parser.add_argument("--code_path", type=str, help="The code path to generate steps") 
+    # parser.add_argument("--prefix_feature", type=str, help="The prefix of the feature file")
+    # parser.add_argument("--code_path", type=str, help="The code path to generate steps")
+    parser.add_argument("--task", type=str, help="The task to perform")
     args = parser.parse_args()
     
-    # Use glob to find files matching the pattern
-    files = glob.glob(f"features/{args.prefix_feature}.feature")
-    
-    for file in files:
-        step_file = file.replace(".feature", ".py").replace("features/", "features/steps/steps_")
-        if not os.path.exists(step_file):
-            with open(step_file, "w") as f:
-                f.write("")
+    file = f"features/{args.task}.feature"
+    step_file = f"features/steps/steps_{args.task}.py"
         
-        generate_step_definitions(file, step_file)
+    generate_step_definitions(file, step_file)
