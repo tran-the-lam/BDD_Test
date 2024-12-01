@@ -1,15 +1,15 @@
 ## Steps to follow
 - Step 1: Code [login program](#login-program) and [hrm program](#hrm-program)
-- Step 2: [Update user story](#update-user-story)
-- Step 3: [Gen .feature file from user story](#gen-bdd-from-user-story)
-- Step 4: [Gen steps file from (user story and code)](#gen-file-test)
-- Step 5: [Fill body code from (steps file and code)](#gen-complete-file-test)
-- Step 6: [Run test](#run-test)
+- Step 2: [Update user story](#2-update-user-story)
+- Step 3: [Gen .feature file from user story](#3-gen-bdd-from-user-story)
+- Step 4: [Gen steps file from (user story and code)](#4-gen-file-test)
+- Step 5: [Fill body code from (steps file and code)](#5-gen-complete-file-test)
+- Step 6: [Run test](#6-run-test)
 
 => To simplify the steps, see the [makefile section](#makefile).
 
 
-### Program
+### 1. Program
 
 #### Setup enviroment:
     - cd source_code
@@ -46,12 +46,12 @@ View the `hrm.py` file [here](./hrm.py)
 Screen: 
 ![Hrm Screen](./images/hrm.png)
 
-### Update user story
+### 2. Update user story
 Example: `As a user, I want to see a success message when I enter the correct username and password (username: admin, password: 1234) so that I know I have logged in successfully`
 
 You can edit user story: [login](./user-stories/login.txt), [hrm](./user-stories/hrm.txt) 
 
-### Gen BDD from user story
+### 3. Gen BDD from user story
     - python scripts/generate_bdd.py
 View the `generate_bdd.py` file [here](./scripts/generate_bdd.py)
 
@@ -81,7 +81,7 @@ Detail: [login.feature](./features/login.feature), [hrm.feature](./features/hrm.
 
 
 
-### Gen file test
+### 4. Gen file test
     - python scripts/generate_step_definition.py
 
 View the `generate_step_definition.py` file [here](./scripts/generate_step_definition.py)
@@ -114,7 +114,7 @@ def step_impl(context):
     raise NotImplementedError(""" Step not implemented: I should see a success message "Login Successful" """)
 ```
 
-### Gen complete file test
+### 5. Gen complete file test
 
     - python scripts/generate_complete_step.py
 
@@ -167,10 +167,10 @@ def step_impl(context):
 ```
 Detail: [steps_login.python](./features/steps/steps_login.py), [steps_hrm.python](./features/steps/steps_hrm.py)
 
-### Makefile
+#### Makefile
 To automate the generation of step files. I wrote a [makefile](./Makefile) to simplify the execution. You just need to execute the command `make gen_steps_file task={task}`. The `task` has two values: `login` or `hrm`. 
 
-### Run test
+### 6. Run test
 `behave`
 Output:
 ```
