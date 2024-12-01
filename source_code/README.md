@@ -1,10 +1,13 @@
 ## Steps to follow
-- [Step 1: Code program](#program)
-- [Step 2: Update user story](#update-user-story)
-- [Step 3: Gen .feature file from user story](#gen-bdd-from-user-story)
-- [Step 4: Gen steps file from (user story and code)](#gen-file-test)
-- [Step 5: Fill body code from (steps file and code)](#gen-complete-file-test)
-- [Step 6: Run test](#run-test)
+- Step 1: Code [login program](#login-program) and [hrm program](#hrm-program)
+- Step 2: [Update user story](#update-user-story)
+- Step 3: [Gen .feature file from user story](#gen-bdd-from-user-story)
+- Step 4: [Gen steps file from (user story and code)](#gen-file-test)
+- Step 5: [Fill body code from (steps file and code)](#gen-complete-file-test)
+- Step 6: [Run test](#run-test)
+
+=> To simplify the steps, see the [makefile section](#makefile).
+
 
 ### Program
 
