@@ -65,9 +65,6 @@ class EmployeeApp(QMainWindow):
         self.table.setItem(row_position, 2, QTableWidgetItem(emp_birth_year))
 
         # Clear input fields
-        # self.input_id.clear()
-        # self.input_name.clear()
-        # self.input_birth_year.clear()
         self.input_id.setText("")
         self.input_name.setText("")
         self.input_birth_year.setText("")

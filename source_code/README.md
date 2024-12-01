@@ -1,22 +1,25 @@
 ## Steps to follow
-- [Step 1: Code login program](#login-program)
+- [Step 1: Code program](#program)
 - [Step 2: Update user story](#update-user-story)
 - [Step 3: Gen .feature file from user story](#gen-bdd-from-user-story)
 - [Step 4: Gen steps file from (user story and code)](#gen-file-test)
 - [Step 5: Fill body code from (steps file and code)](#gen-complete-file-test)
 - [Step 6: Run test](#run-test)
 
-### Login program
-#### How to run project:
+### Program
+
+#### Setup enviroment:
     - cd source_code
     - python -m venv myenv
     - pip install -r requirements.txt
     - source myenv/bin/activate (Macos/linux)
-    - python login.py (login screen)
-    - python hrm.py (human resource management)
 
+#### Login program
+
+A program for logging in with a username and password. The login is successful if the information is valid and fails if the information is invalid.
+
+    - python login.py (login screen)
 View the `login.py` file [here](./login.py)
-View the `hrm.py` file [here](./hrm.py)
 
 Login screen:
 ![Login screen](./images/login_screen.png)
@@ -26,8 +29,12 @@ Login successful:
 
 Login failed:
 ![Login screen](./images/login_failed.png)
+#### Hrm program
+A program to add new employees, including their ID, name, and year of birth; after entering the details and clicking the "Save" button, the information will be displayed in a table.
 
-Hrm Screen: 
+    - python hrm.py 
+View the `hrm.py` file [here](./hrm.py)
+Screen: 
 ![Hrm Screen](./images/hrm.png)
 
 ### Update user story
@@ -69,7 +76,6 @@ Detail: [login.feature](./features/login.feature), [hrm.feature](./features/hrm.
     - python scripts/generate_step_definition.py
 
 View the `generate_step_definition.py` file [here](./scripts/generate_step_definition.py)
-
 Example of the output file:
 ```python
 from behave import given, when, then
@@ -102,9 +108,7 @@ def step_impl(context):
 
     - python scripts/generate_complete_step.py
 
-Input: program code file, step file
-
-Content of the output file
+Example of the output file:
 ```python
 from behave import given, when, then
 from PyQt5.QtWidgets import QApplication
@@ -154,7 +158,7 @@ def step_impl(context):
 Detail: [steps_login.python](./features/steps/steps_login.py), [steps_hrm.python](./features/steps/steps_hrm.py)
 
 ### Makefile
-To automate the generation of step files. I wrote a [makefile](./Makefile) to simplify the execution. You just need to execute the command `make gen_steps_file task={task}`. The `task` has two values: `login` or `hrm` 
+To automate the generation of step files. I wrote a [makefile](./Makefile) to simplify the execution. You just need to execute the command `make gen_steps_file task={task}`. The `task` has two values: `login` or `hrm`. 
 
 ### Run test
 `behave`
