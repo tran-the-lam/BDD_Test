@@ -26,7 +26,7 @@ OPENAI_API_KEY={your_key}
 
 A program for logging in with a username and password. The login is successful if the information is valid and fails if the information is invalid.
 
-    - python login.py (login screen)
+    - python login.py
 View the `login.py` file [here](./login.py)
 
 Login screen:
