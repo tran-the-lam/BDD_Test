@@ -1,5 +1,5 @@
 ## Steps to follow
-- Step 1: Code [login program](#login-program) and [hrm program](#hrm-program)
+- Step 1: Code [login program](#11-login-program) and [hrm program](#12-hrm-program)
 - Step 2: [Update user story](#2-update-user-story)
 - Step 3: [Gen .feature file from user story](#3-gen-bdd-from-user-story)
 - Step 4: [Gen steps file from (user story and code)](#4-gen-file-test)
@@ -11,7 +11,7 @@
 
 ### 1. Program
 
-#### Setup enviroment:
+###### Setup enviroment:
     - cd source_code
     - python -m venv myenv
     - pip install -r requirements.txt
@@ -22,7 +22,7 @@ The `.env` file contains the configuration for running the program.
 OPENAI_API_KEY={your_key}
 ```
 
-#### Login program
+#### 1.1 Login program
 
 A program for logging in with a username and password. The login is successful if the information is valid and fails if the information is invalid.
 
@@ -37,7 +37,7 @@ Login successful:
 
 Login failed:
 ![Login screen](./images/login_failed.png)
-#### Hrm program
+#### 1.2 Hrm program
 A program to add new employees, including their ID, name, and year of birth; after entering the details and clicking the "Save" button, the information will be displayed in a table.
 
     - python hrm.py 
