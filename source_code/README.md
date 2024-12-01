@@ -17,6 +17,11 @@
     - pip install -r requirements.txt
     - source myenv/bin/activate (Macos/linux)
 
+The `.env` file contains the configuration for running the program.
+```
+OPENAI_API_KEY={your_key}
+```
+
 #### Login program
 
 A program for logging in with a username and password. The login is successful if the information is valid and fails if the information is invalid.
