@@ -27,7 +27,7 @@ OPENAI_API_KEY={your_key}
 A program for logging in with a username and password. The login is successful if the information is valid and fails if the information is invalid.
 
     - python login.py
-View the `login.py` file [here](./login.py)
+View the `login.py` [file](./login.py)
 
 Login screen:
 ![Login screen](./images/login_screen.png)
@@ -41,7 +41,7 @@ Login failed:
 A program to add new employees, including their ID, name, and year of birth; after entering the details and clicking the "Save" button, the information will be displayed in a table.
 
     - python hrm.py 
-View the `hrm.py` file [here](./hrm.py)
+View the `hrm.py` [file](./hrm.py)
 
 Screen: 
 ![Hrm Screen](./images/hrm.png)
@@ -53,7 +53,7 @@ You can edit user story: [login](./user-stories/login.txt), [hrm](./user-stories
 
 ### 3. Gen BDD from user story
     - python scripts/generate_bdd.py
-View the `generate_bdd.py` file [here](./scripts/generate_bdd.py)
+View the `generate_bdd.py` [file](./scripts/generate_bdd.py)
 
 Contents of the output file:
 ```gherkin
@@ -84,7 +84,7 @@ Detail: [login.feature](./features/login.feature), [hrm.feature](./features/hrm.
 ### 4. Gen file test
     - python scripts/generate_step_definition.py
 
-View the `generate_step_definition.py` file [here](./scripts/generate_step_definition.py)
+View the `generate_step_definition.py` [file](./scripts/generate_step_definition.py)
 
 Example of the output file:
 ```python
