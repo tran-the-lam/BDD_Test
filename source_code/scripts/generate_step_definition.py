@@ -54,8 +54,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
     # Add arguments
-    # parser.add_argument("--prefix_feature", type=str, help="The prefix of the feature file")
-    # parser.add_argument("--code_path", type=str, help="The code path to generate steps")
     parser.add_argument("--task", type=str, help="The task to perform")
     args = parser.parse_args()
     

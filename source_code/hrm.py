@@ -1,21 +1,30 @@
 import sys
 from PyQt5.QtWidgets import (
-    QApplication, QMainWindow, QVBoxLayout, QHBoxLayout, QWidget,
-    QLabel, QLineEdit, QPushButton, QTableWidget, QTableWidgetItem
+    QApplication,
+    QMainWindow,
+    QVBoxLayout,
+    QHBoxLayout,
+    QWidget,
+    QLabel,
+    QLineEdit,
+    QPushButton,
+    QTableWidget,
+    QTableWidgetItem,
 )
+
 
 class EmployeeApp(QMainWindow):
     def __init__(self):
         super().__init__()
         self.initUI()
-        
+
     def initUI(self):
         self.setWindowTitle("Human Resource Management")
         self.setGeometry(100, 100, 600, 400)
 
         self.central_widget = QWidget()
         self.setCentralWidget(self.central_widget)
-        
+
         self.main_layout = QVBoxLayout()
         self.central_widget.setLayout(self.main_layout)
 
@@ -48,7 +57,7 @@ class EmployeeApp(QMainWindow):
         self.main_layout.addWidget(self.table)
 
     def add_employee(self):
-       
+
         emp_id = self.input_id.text()
         emp_name = self.input_name.text()
         emp_birth_year = self.input_birth_year.text()

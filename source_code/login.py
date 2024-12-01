@@ -1,5 +1,13 @@
-from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QMessageBox
+from PyQt5.QtWidgets import (
+    QApplication,
+    QWidget,
+    QLabel,
+    QLineEdit,
+    QPushButton,
+    QMessageBox,
+)
 import sys
+
 
 class CustomMessageBox(QMessageBox):
     def __init__(self, *args, **kwargs):
@@ -9,7 +17,8 @@ class CustomMessageBox(QMessageBox):
     def showEvent(self, event):
         self.message_text = self.text()
         super().showEvent(event)
-        
+
+
 class LoginWindow(QWidget):
     def __init__(self):
         super().__init__()
@@ -66,6 +75,7 @@ class LoginWindow(QWidget):
             self.msg_box.setWindowTitle("Error")
             self.msg_box.exec_()
             print(f"MessageBox Content: {self.msg_box.message_text}")
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
