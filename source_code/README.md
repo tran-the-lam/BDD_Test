@@ -34,6 +34,7 @@ A program to add new employees, including their ID, name, and year of birth; aft
 
     - python hrm.py 
 View the `hrm.py` file [here](./hrm.py)
+
 Screen: 
 ![Hrm Screen](./images/hrm.png)
 
@@ -76,6 +77,7 @@ Detail: [login.feature](./features/login.feature), [hrm.feature](./features/hrm.
     - python scripts/generate_step_definition.py
 
 View the `generate_step_definition.py` file [here](./scripts/generate_step_definition.py)
+
 Example of the output file:
 ```python
 from behave import given, when, then
