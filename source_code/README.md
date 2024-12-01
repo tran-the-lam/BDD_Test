@@ -45,7 +45,6 @@ You can edit user story: [login](./user-stories/login.txt), [hrm](./user-stories
 ### Gen BDD from user story
     - python scripts/generate_bdd.py
 View the `generate_bdd.py` file [here](./scripts/generate_bdd.py)
-Input: user_story, code
 Contents of the output file:
 ```gherkin
 Feature: Login Functionality
