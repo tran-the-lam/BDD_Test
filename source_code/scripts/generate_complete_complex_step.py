@@ -3,7 +3,8 @@ from dotenv import load_dotenv
 import os
 import argparse
 
-# using for source code only one file
+# https://apps.abacus.ai/chatllm/?convoId=120ee5e6e7&appId=2fef366f4
+# TODO update prompt to load from all files in a directory
 
 # Load environment variables from .env file
 load_dotenv()
