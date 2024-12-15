@@ -1,5 +1,5 @@
 ## Steps to follow
-- Step 1: Code [login program](#11-login-program) and [hrm program](#12-hrm-program)
+- Step 1: Code [login program](#11-login-program), [hrm program](#12-hrm-program) and [todo-app](#13-todo-app)
 - Step 2: [Update user story](#2-update-user-story)
 - Step 3: [Gen .feature file from user story](#3-gen-bdd-from-user-story)
 - Step 4: [Gen steps file from (user story and code)](#4-gen-file-test)
@@ -46,14 +46,24 @@ View the `hrm.py` [file](./hrm.py)
 Screen: 
 ![Hrm Screen](./images/hrm.png)
 
+#### 1.3 Todo App
+![image](./images/todo_app.png)
+
+[Source code](./todo-app/) is written by flask
+
 ### 2. Update user story
 Example: `As a user, I want to see a success message when I enter the correct username and password (username: admin, password: 1234) so that I know I have logged in successfully`
 
-You can edit user story: [login](./user-stories/login.txt), [hrm](./user-stories/hrm.txt) 
+You can edit user story: [login](./user-stories/login.txt), [hrm](./user-stories/hrm.txt), [todo-app](./user-stories/todo-app.txt)
 
 ### 3. Gen BDD from user story
-    - python scripts/generate_bdd.py
-View the `generate_bdd.py` [file](./scripts/generate_bdd.py)
+Currently, I have supported read code from one file or folder.
+[`generate_bdd_of_folder.py`](./scripts/generate_bdd_of_folder.py) for folder case.
+[`generate_bdd`](./scripts/generate_bdd.py) for one file case.
+
+```
+python scripts/generate_bdd.py
+```
 
 Contents of the output file:
 ```gherkin
@@ -77,12 +87,16 @@ Feature: Login Functionality
     And clicks the login button
     Then an error message "Please enter username and password!" should be displayed
 ```
-Detail: [login.feature](./features/login.feature), [hrm.feature](./features/hrm.feature)
+Detail: [login.feature](./features/login.feature), [hrm.feature](./features/hrm.feature), [todo-app.feature](./features/todo-app.feature)
 
 
 
 ### 4. Gen file test
-    - python scripts/generate_step_definition.py
+`generate_step_definition.py` for both case.
+
+```
+python scripts/generate_step_definition.py
+```
 
 View the `generate_step_definition.py` [file](./scripts/generate_step_definition.py)
 
@@ -116,7 +130,12 @@ def step_impl(context):
 
 ### 5. Gen complete file test
 
-    - python scripts/generate_complete_step.py
+`generate_complete_step_of_folder` for folder case.
+`generate_complete_step` for one file case.
+
+```
+python scripts/generate_complete_step.py
+```
 
 Example of the output file:
 ```python
@@ -224,6 +243,6 @@ Took 0m4.963s
 zsh: segmentation fault  behave
 ```
 
-## Todo App
-[Source code](./todo-app/) is written by flask
-![image](./images/todo_app.png)
+
+To generate test file. You can use command line: `make gen_steps_src task=todo-app`
+### [Video test](https://www.youtube.com/watch?v=7d7hCxrpn_g) 
