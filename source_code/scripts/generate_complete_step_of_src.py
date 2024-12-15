@@ -3,9 +3,6 @@ from dotenv import load_dotenv
 import os
 import argparse
 
-# https://apps.abacus.ai/chatllm/?convoId=120ee5e6e7&appId=2fef366f4
-# TODO update prompt to load from all files in a directory
-
 # Load environment variables from .env file
 load_dotenv()
 
@@ -99,6 +96,3 @@ if __name__ == "__main__":
 
     read_all_file_in_folder(args.folder)
     generate_complete_steps(args.folder, step_path)
-    
-    
-    print("Result====", map_file_to_content)
