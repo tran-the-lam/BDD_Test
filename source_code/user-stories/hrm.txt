@@ -1,0 +1,2 @@
+As a user, I want to add employee information (ID, Name, Birth Year) and display it in a table, so that I can manage employee records easily.
+As a user, I want the input fields to clear automatically after saving, so that I can quickly add new employee information without extra effort.

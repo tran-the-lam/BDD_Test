@@ -1,0 +1,2 @@
+As a user, I want to add new tasks to the list to keep track of my to-dos.
+As a user, I want to remove a task from the list once I have completed it.k
