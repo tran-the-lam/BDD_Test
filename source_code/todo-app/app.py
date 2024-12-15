@@ -13,7 +13,7 @@ def index():
 def add():
     # Get data from form
     task = request.form.get('task')
-    if task:
+    if task and task not in todo_list:
         # Add task to list
         todo_list.append(task) 
     return redirect(url_for('index'))
@@ -26,4 +26,4 @@ def delete(task_id):
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='127.0.0.1', port=5000)

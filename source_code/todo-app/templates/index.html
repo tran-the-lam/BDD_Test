@@ -10,7 +10,7 @@
         {% for task in todos %}
             <li>
                 {{ loop.index }}. {{ task }}
-                <a href="{{ url_for('delete', task_id=loop.index0) }}">Xóa</a>
+                <a href="{{ url_for('delete', task_id=loop.index0) }}">Delete</a>
             </li>
         {% else %}
             <li>Empty list.</li>
