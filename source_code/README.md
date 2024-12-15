@@ -26,7 +26,10 @@ OPENAI_API_KEY={your_key}
 
 A program for logging in with a username and password. The login is successful if the information is valid and fails if the information is invalid.
 
-    - python login.py
+```
+python login.py
+```
+
 View the `login.py` [file](./login.py)
 
 Login screen:
@@ -39,8 +42,10 @@ Login failed:
 ![Login screen](./images/login_failed.png)
 #### 1.2 Hrm program
 A program to add new employees, including their ID, name, and year of birth; after entering the details and clicking the "Save" button, the information will be displayed in a table.
+```
+python hrm.py 
+```
 
-    - python hrm.py 
 View the `hrm.py` [file](./hrm.py)
 
 Screen: 
@@ -49,7 +54,10 @@ Screen:
 #### 1.3 Todo App
 ![image](./images/todo_app.png)
 
-[Source code](./todo-app/) is written by flask
+How to run:
+```
+python todo-app/app.py
+```
 
 ### 2. Update user story
 Example: `As a user, I want to see a success message when I enter the correct username and password (username: admin, password: 1234) so that I know I have logged in successfully`
@@ -57,9 +65,11 @@ Example: `As a user, I want to see a success message when I enter the correct us
 You can edit user story: [login](./user-stories/login.txt), [hrm](./user-stories/hrm.txt), [todo-app](./user-stories/todo-app.txt)
 
 ### 3. Gen BDD from user story
-Currently, I have supported read code from one file or folder.
+Currently, I have supported read code from a file or folder.
+
 [`generate_bdd_of_folder.py`](./scripts/generate_bdd_of_folder.py) for folder case.
-[`generate_bdd`](./scripts/generate_bdd.py) for one file case.
+
+[`generate_bdd`](./scripts/generate_bdd.py) for a file case.
 
 ```
 python scripts/generate_bdd.py
@@ -131,7 +141,7 @@ def step_impl(context):
 ### 5. Gen complete file test
 
 `generate_complete_step_of_folder` for folder case.
-`generate_complete_step` for one file case.
+`generate_complete_step` for a file case.
 
 ```
 python scripts/generate_complete_step.py
@@ -184,10 +194,16 @@ def step_impl(context):
     assert context.window.msg_box.message_text == "Please enter username and password!"
 
 ```
-Detail: [steps_login.python](./features/steps/steps_login.py), [steps_hrm.python](./features/steps/steps_hrm.py)
+Detail: [steps_login.py](./features/steps/steps_login.py), [steps_hrm.py](./features/steps/steps_hrm.py),
+[steps_todo-app.py](./features/steps/steps_todo-app.py)
 
 #### Makefile
-To automate the generation of step files. I wrote a [makefile](./Makefile) to simplify the execution. You just need to execute the command `make gen_steps_file task={task}`. The `task` has two values: `login` or `hrm`. 
+- To automate the generation of step files. I wrote a [makefile](./Makefile) to simplify the execution.
+
+    - A file case: You just need to execute the command `make gen_steps_of_file task={task}`. The `task` has two values: `login` or `hrm`. 
+
+    - Folder case: You just need to execute the command `make gen_steps_of_folder task=todo-app`
+
 
 ### 6. Run test
 `behave`
