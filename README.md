@@ -58,5 +58,6 @@ http://127.0.0.1:5001
 ```
 
 ## Contributors
-
-[Include contributor information]
+- [Hoàng Trương](https://github.com/truonganhhoang) 
+- [Hong-Nhung Nguyen](https://github.com/nhunguet)
+- [The-Lam Tran](https://github.com/tran-the-lam)
