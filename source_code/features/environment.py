@@ -1,5 +1,8 @@
+from selenium import webdriver
+
 def before_all(context):
-    print("Starting tests...")
+    context.driver = webdriver.Chrome()
+    context.driver.implicitly_wait(10)
 
 def after_all(context):
-    print("Tests completed.")
+    context.driver.quit()
