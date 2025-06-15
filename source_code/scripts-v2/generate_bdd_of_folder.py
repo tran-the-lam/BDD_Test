@@ -86,17 +86,7 @@ if __name__ == "__main__":
     us_path = "ecommerce/USER_STORIES.md"
     with open(us_path, "r") as file:
         user_stories = file.readlines()
-
-    # Đọc source code
-    # read_all_file_in_folder("ecommerce/")
-    # data_code = ""
-    # for k, v in map_file_to_content.items():
-    #     data_code += f"##### {k}:\n{v}\n\n"
-        
-    # print("==========" * 2)
-    # print(data_code)
-    # print("==========" *2)
-
+    
     # Tạo thư mục features nếu chưa có
     os.makedirs("features", exist_ok=True)
 
