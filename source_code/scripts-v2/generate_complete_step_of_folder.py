@@ -115,7 +115,7 @@ def generate_complete_steps(us_id, data_code, step_path):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--start", type=int, default=1, help="Start user story number (e.g., 1 for us-001)")
-    parser.add_argument("--end", type=int, default=2, help="End user story number (e.g., 36 for us-036)")
+    parser.add_argument("--end", type=int, default=3, help="End user story number (e.g., 36 for us-036)")
     # parser.add_argument("--mapping", type=str, default="us_code_mapping.json", help="Mapping file userstory to code")
     args = parser.parse_args()
 

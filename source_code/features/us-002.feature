@@ -1,5 +1,5 @@
 
-Feature: Product category filter
+Feature: Product Category Filter
 
   Scenario: Select category filter for Clothing
     Given I am on the homepage
