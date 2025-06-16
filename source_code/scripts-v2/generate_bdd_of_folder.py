@@ -31,7 +31,7 @@ def generate_bdd_from_user_story(user_story, data_code):
     """
     
     completion = client.chat.completions.create(
-        model="gpt-4o-mini",
+        model="gpt-4.1-mini",
         messages=[
             {
                 "role": "system",

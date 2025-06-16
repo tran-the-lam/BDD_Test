@@ -93,7 +93,7 @@ def generate_complete_steps(us_id, data_code, step_path):
     """
     
     completion = client.chat.completions.create(
-        model="gpt-4o",
+        model="gpt-4.1-mini",
         messages=[
             {"role": "system", "content": "You are a Python Selenium testing expert"},
             {"role": "user", "content": prompt},

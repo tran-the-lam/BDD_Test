@@ -1,12 +1,12 @@
 
-Feature: User login through the login dialog
+Feature: User Login via Sign In Dialog
 
-  Scenario: User opens login dialog and logs in successfully
-    Given the user is on the application
+  Scenario: Registered user logs in successfully through the Sign In dialog
+    Given the "Sign In" button is visible
     When the user clicks the "Sign In" button
-    Then the login dialog should be displayed
-    When the user enters "john@example.com" in the email input field
-    And the user enters "password123" in the password input field
-    And the user clicks the "Sign In" button in the login dialog
-    Then the login dialog should close
-    And the "Sign In" button should no longer be visible
+    Then the login dialog is displayed
+    When the user enters "john@example.com" into the email input
+    And the user enters "password123" into the password input
+    And the user clicks the "Sign In" button within the dialog
+    Then the login dialog is closed
+    And the "Sign In" button is no longer visible
