@@ -1,12 +1,12 @@
 
 Feature: User Login
 
-  Scenario: Successful login using the login dialog
-    Given I am a registered user
-    When I click the "Sign In" button
+  Scenario: User logs in successfully
+    Given the user is on the application
+    When the user clicks the "Sign In" button
     Then the login dialog should be displayed
-    When I enter my email "john@example.com" in the email input field
-    And I enter my password "password123" in the password input field
-    And I click the "Sign In" button in the dialog
+    When the user enters email "john@example.com" into the email input
+    And the user enters password "password123" into the password input
+    And the user clicks the "Sign In" button in the dialog
     Then the login dialog should close
-    And the "Sign In" button should not be visible
+    And the "Sign In" button should be hidden

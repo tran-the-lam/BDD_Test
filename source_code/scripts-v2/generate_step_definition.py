@@ -55,7 +55,7 @@ if __name__ == "__main__":
 
     # Add arguments
     parser.add_argument("--start", type=int, default=1, help="Start user story number (e.g., 1 for us-001)")
-    parser.add_argument("--end", type=int, default=1, help="End user story number (e.g., 36 for us-036)")
+    parser.add_argument("--end", type=int, default=2, help="End user story number (e.g., 36 for us-036)")
     args = parser.parse_args()
     
     for i in range(args.start, args.end + 1):

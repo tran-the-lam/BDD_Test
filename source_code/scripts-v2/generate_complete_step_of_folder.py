@@ -37,20 +37,28 @@ def generate_complete_steps(us_id, data_code, step_path):
     prompt = f"""
         You are a Python Selenium testing expert. Your task is to generate a complete Selenium test file `{step_path}` to test the web application's UI for user story {us_id}.
 
-        ### Requirements:
+        ### General Requirements:
         - Use Python Selenium to automate browser actions.
-        - Complete all missing steps in `{step_path}` based on the logic in the provided code.
+        - Complete all missing steps in `{step_path}` based on the logic in the provided code and user story.
         - Ensure no scenario or step is missed.
         - Avoid repeating execution steps.
         - Assume the web app is running locally (http://localhost:5173).
         - Handle multiple scenarios carefully, ensuring proper initialization to avoid conflicts.
         - Include all necessary imports and boilerplate code for the file to run correctly.
         - Return only the complete code for `{step_path}` without any explanation or comments.
-        - Only use selectors (id, class, text, etc.) that actually exist in the provided code. If no id is present, use className or button text for locating elements.
-        - When verifying that the login dialog is displayed, do NOT check for a class or id like "login-dialog" unless it exists in the code. Instead, check for the presence or visibility of the email input (e.g., input with id="email" or name="email").
-        -  If there are multiple "Sign In" buttons (e.g., one on the header and one in the dialog), make sure to select the correct one for each step:
-            +) The "Sign In" button on the header should be selected as the button outside any dialog/modal.
-            +) The "Sign In" button in the dialog should be selected as the button inside the dialog/modal, or as the submit button of the login form.
+
+        ### Selector Guidelines:
+        - Always use selectors (id, class, text, etc.) that actually exist in the provided code. Do NOT assume any id/class that does not exist.
+        - If an element does not have an id, use className, button text, or other unique attributes for locating elements.
+        - When there are multiple elements with the same label (e.g., multiple "Sign In" buttons), select the correct one based on its context in the DOM (e.g., header, dialog, form, etc.).
+            - For example, to click a button in a dialog, ensure the button is a descendant of the dialog container or is the submit button of the login form.
+            - To click a button on the main page (not in a dialog), ensure it is not a descendant of any dialog/modal container.
+        - When verifying that a dialog/modal is displayed, check for the presence or visibility of a unique element inside the dialog (such as an input field or heading), not for a generic class/id unless it exists in the code.
+        - Do NOT use ancestor or descendant selectors with class names that are not present in the code.
+
+        ### Output:
+        - Return the complete `{step_path}` file with all steps implemented, using only selectors and UI flows that are verifiable from the provided code.
+
         ### Related Source Code:
         {data_code}
 
@@ -84,7 +92,7 @@ def generate_complete_steps(us_id, data_code, step_path):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--start", type=int, default=1, help="Start user story number (e.g., 1 for us-001)")
-    parser.add_argument("--end", type=int, default=1, help="End user story number (e.g., 36 for us-036)")
+    parser.add_argument("--end", type=int, default=2, help="End user story number (e.g., 36 for us-036)")
     # parser.add_argument("--mapping", type=str, default="us_code_mapping.json", help="Mapping file userstory to code")
     args = parser.parse_args()
 
