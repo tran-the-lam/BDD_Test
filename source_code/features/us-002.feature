@@ -1,7 +1,8 @@
 
-Feature: Filter product list by category
+Feature: Product category filter
 
-  Scenario: User selects the "Clothing" category filter
-    Given the user is on the homepage
-    When the user selects the radio input with value "Clothing" in the category filter
-    Then the product list should update to show only clothing items
+  Scenario: Select category filter for Clothing
+    Given I am on the homepage
+    When I select the radio input with value "Clothing" in the category filter
+    Then the page heading should update to "Clothing"
+    And the product count should reflect the filtered results

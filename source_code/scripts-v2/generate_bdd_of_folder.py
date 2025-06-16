@@ -25,7 +25,9 @@ def generate_bdd_from_user_story(user_story, data_code):
         {user_story}
 
         Source Code:
-        {data_code}        
+        {data_code}       
+        
+        Source Code Language: React 
     """
     
     completion = client.chat.completions.create(

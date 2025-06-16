@@ -47,17 +47,40 @@ def generate_complete_steps(us_id, data_code, step_path):
         - Include all necessary imports and boilerplate code for the file to run correctly.
         - Return only the complete code for `{step_path}` without any explanation or comments.
 
+        ### Session Management (IMPORTANT):
+        - DO NOT create new webdriver instances (e.g., context.driver = webdriver.Chrome()) in step definitions.
+        - Assume the driver is already initialized via environment.py and available as context.driver.
+        - DO NOT call context.driver.quit() anywhere in the step file.
+        - For @given steps that navigate to pages, only use context.driver.get() if needed, but don't create new driver.
+        - The browser session should persist between different test scenarios to maintain login state and other session data.
+
         ### Selector Guidelines:
         - Always use selectors (id, class, text, etc.) that actually exist in the provided code. Do NOT assume any id/class that does not exist.
-        - If an element does not have an id, use className, button text, or other unique attributes for locating elements.
-        - When there are multiple elements with the same label (e.g., multiple "Sign In" buttons), select the correct one based on its context in the DOM (e.g., header, dialog, form, etc.).
-            - For example, to click a button in a dialog, ensure the button is a descendant of the dialog container or is the submit button of the login form.
-            - To click a button on the main page (not in a dialog), ensure it is not a descendant of any dialog/modal container.
-        - When verifying that a dialog/modal is displayed, check for the presence or visibility of a unique element inside the dialog (such as an input field or heading), not for a generic class/id unless it exists in the code.
-        - Do NOT use ancestor or descendant selectors with class names that are not present in the code.
+        - Analyze the React/HTML structure carefully before choosing selectors:
+          * If components use Tailwind CSS classes, use the actual Tailwind classes (e.g., "bg-white rounded-lg shadow-md")
+          * If components use CSS modules or custom classes, use those exact class names
+          * If no specific classes exist, use structural selectors (tag names, hierarchy, attributes)
+        - Do NOT invent generic class names like ".product-card", ".category-label", ".modal-dialog" unless they appear in the source code
+        - When checking filtered/updated content, verify:
+          * Changes in headings or text content that reflect the action
+          * Presence/absence of elements rather than specific labels that may not exist
+          * Count or visibility of elements rather than their internal content if that content is not exposed in the DOM
+        - For dynamic content (lists, grids, cards), use the actual container classes or structural patterns from the React components
+        - When multiple elements have similar content, use unique attributes, hierarchy, or position-based selectors to target the correct one
+
+        ### Content Verification Guidelines:
+        - When verifying filtered results, DO NOT assume that category information is displayed in product cards unless explicitly shown in the React component code
+        - Focus on verifiable changes like:
+          * Page headings that update to reflect the filter
+          * Product counts that change
+          * Presence/absence of products rather than their internal category labels
+          * URL changes or other state indicators
+        - If the React component does not render category information in the product card, do not try to find it in the DOM
+        - Always check what data is actually rendered by examining the React component structure
 
         ### Output:
         - Return the complete `{step_path}` file with all steps implemented, using only selectors and UI flows that are verifiable from the provided code.
+        - Ensure the generated code works with shared browser session managed by environment.py.
 
         ### Related Source Code:
         {data_code}
