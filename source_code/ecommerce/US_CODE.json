@@ -1,0 +1,22 @@
+{
+    "US-001": [
+        "ecommerce/src/App.tsx",
+        "ecommerce/src/components/Auth/AuthModal.tsx",
+        "ecommerce/src/components/Layout/Header.tsx"
+    ],
+    "US-002": [
+        "ecommerce/src/App.tsx",
+        "ecommerce/src/components/Products/ProductGrid.tsx",
+        "ecommerce/src/components/Products/ProductCard.tsx",
+        "ecommerce/src/components/Products/ProductFilter.tsx",
+        "ecommerce/data/products.tsx"
+    ],
+    "US-003": [
+        "ecommerce/src/App.tsx",
+        "ecommerce/src/components/Layout/Header.tsx",
+        "ecommerce/src/components/Cart/Cart.tsx",
+        "ecommerce/src/components/Products/ProductGrid.tsx",
+        "ecommerce/src/components/Products/ProductCard.tsx",
+        "ecommerce/data/products.tsx"
+    ]
+}
